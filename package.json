@@ -4,19 +4,23 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "remix vite:build",
+    "clean": "rm -rf build",
+    "build": "npm run clean && remix vite:build && npm run build:server",
+    "build:server": "tsc server/main.ts --outDir build --esModuleInterop --module NodeNext",
     "dev": "remix vite:dev",
-    "start": "remix-serve ./build/server/index.js",
-    "typecheck": "tsc"
+    "start": "node build/main.js",
+    "start:debug": "node --inspect build/main.js",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@remix-run/express": "^2.10.3",
     "@remix-run/node": "^2.10.3",
     "@remix-run/react": "^2.10.3",
-    "@remix-run/serve": "^2.10.3",
+    "express": "^4.19.2",
     "isbot": "^4.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
@@ -25,6 +29,7 @@
     "@remix-run/dev": "^2.10.3",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "cross-env": "^7.0.3",
     "typescript": "^5.5.4",
     "vite": "^5.3.4"
   }
