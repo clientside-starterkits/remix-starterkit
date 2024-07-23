@@ -7,9 +7,9 @@
     "clean": "rm -rf build",
     "build": "npm run clean && remix vite:build && npm run build:server",
     "build:server": "tsc server/main.ts --outDir build --esModuleInterop --module NodeNext",
-    "dev": "remix vite:dev",
-    "start": "node build/main.js",
-    "start:debug": "node --inspect build/main.js",
+    "dev": "node build/main.js",
+    "dev:debug": "node --inspect build/main.js",
+    "start": "cross-env NODE_ENV=production node build/main.js",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [],
