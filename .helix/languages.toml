@@ -1,0 +1,20 @@
+[language-server.vscode-eslint-language-server.config]
+validate = "on"
+run = "onType"
+rulesCustomizations = []
+experimental = { useFlatConfig = true }
+problems = { shortenToSingleLine = false }
+nodePath = "/Users/frey_do/devel/projects/bookmark-landing-page/node_modules"
+
+[language-server.vscode-eslint-language-server.config.codeAction.disableRuleComment]
+enable = true
+location = "separateLine"
+
+[language-server.vscode-eslint-language-server.config.codeAction.showDocumentation]
+enable = true
+
+[language-server.vscode-eslint-language-server.config.workingDirectory]
+mode = "location"
+
+
+
