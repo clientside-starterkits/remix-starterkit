@@ -8,7 +8,7 @@
     "clean": "rm -rf build",
     "build": "npm run clean && remix vite:build && npm run build:server",
     "build:server": "tsc server/main.ts --outDir build --esModuleInterop --module NodeNext",
-    "lint": "eslint --config eslint.config.js .",
+    "lint": "biome lint --error-on-warnings ./app ./server",
     "format": "biome format --write ./app ./server",
     "dev": "node build/main.js",
     "dev:debug": "node --inspect build/main.js",
