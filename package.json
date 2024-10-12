@@ -8,8 +8,8 @@
     "clean": "rm -rf build",
     "build": "npm run clean && remix vite:build && npm run build:server",
     "build:server": "tsc server/main.ts --outDir build --esModuleInterop --module NodeNext",
-    "lint": "eslint --config eslint.config.js .",
-    "format": "prettier . --check",
+    "lint": "biome lint --error-on-warnings ./app ./server",
+    "format": "biome format --write ./app ./server",
     "dev": "node build/main.js",
     "dev:debug": "node --inspect build/main.js",
     "start": "cross-env NODE_ENV=production node build/main.js",
@@ -29,23 +29,16 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.7.0",
+    "@biomejs/biome": "^1.9.3",
     "@remix-run/dev": "^2.10.3",
-    "@types/eslint__js": "^8.42.3",
     "@types/express": "^4.17.21",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",
     "cross-env": "^7.0.3",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.35.0",
     "postcss": "^8.4.40",
-    "prettier": "^3.3.3",
     "tailwindcss": "^3.4.7",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^7.17.0",
     "vite": "^5.3.4"
   }
 }

@@ -1,4 +1,5 @@
 {
+  "exclude": ["node_modules", "./build/**/*"],
   "include": [
     "**/*.ts",
     "**/*.tsx",
@@ -8,6 +9,7 @@
     "**/.client/**/*.tsx"
   ],
   "compilerOptions": {
+    "outDir": "./build",
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "types": ["@remix-run/node", "vite/client"],
     "isolatedModules": true,
